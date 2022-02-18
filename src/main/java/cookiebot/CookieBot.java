@@ -1,5 +1,6 @@
 package cookiebot;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -11,6 +12,7 @@ import pageobjects.Store;
 public class CookieBot {
 
     public WebDriver webDriver;
+    public WebDriverManager webDriverManager;
     public ChromeOptions options;
     public BasePage basePage;
     // public static boolean loggingEnabled = true; TO-DO -- MAKE A Logger.java class I can import into every page object which will print operations globally
@@ -19,6 +21,7 @@ public class CookieBot {
     public CookieBot() {
         options = new ChromeOptions();
         setProperties();
+        webDriverManager.chromedriver().setup();
         webDriver = new ChromeDriver(options);
         webDriver.manage().window().maximize();
         basePage = new BasePage(webDriver);
