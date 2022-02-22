@@ -29,7 +29,7 @@ public class CookieBot {
 
     public void openPage() {
 
-        this.webDriver.navigate().to("https://orteil.dashnet.org/cookieclicker/");
+        this.webDriver.navigate().to("https://cookie-clicker.co/");
 
     }
 
